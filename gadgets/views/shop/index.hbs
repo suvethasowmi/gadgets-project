@@ -1,0 +1,108 @@
+{{!-- <br>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card" style="width: 25rem;">
+  <img src="https://ey6ff3dp8en.exactdn.com/wp-content/uploads/2021/01/Refurbished-MacBook-2015-A1466-5.jpg?strip=all&lossy=0&ssl=1" height="400px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">MacBook pro</h5>
+    <p class="card-text">M.R.P:50,000/-</p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+    </div>
+
+     <div class="col-sm-4">
+        <div class="card" style="width: 25rem;" >
+  <img src="https://www.jo-cell.com/cdn/shop/products/MME73_800x_6da587dc-a02a-4aca-8903-c22080d20fe2_1024x.webp?v=1669381321" height="397px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">AirPods Pro (2nd generation)</h5>
+    <p class="card-text">M.R.P:24,900/-</p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+    </div>
+
+     <div class="col-sm-4">
+        <div class="card" style="width: 25rem;">
+  <img src="https://i0.wp.com/iot.do/wp-content/uploads/sites/2/2016/07/61WzbpVKIdL._SL1500_.jpg?fit=600%2C508&ssl=1" height="395px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Apple SmartWatch Series 9</h5>
+    <p class="card-text">M.R.P:41,900/-</p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+    </div>
+
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card phone" style="width: 25rem;">
+  <img src="https://i0.wp.com/cellbuddy.in/buddy/wp-content/uploads/2022/09/13promax-blue-2.png?fit=800%2C800&ssl=1"  height="365px"class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">iphone 13 pro max</h5>
+    <p class="card-text">M.R.P:100/kg</p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+    </div>
+
+     <div class="col-sm-4">
+        <div class="card" style="width: 25rem;">
+  <img src="https://images.indianexpress.com/2023/12/apple-ipad-pro.jpg" height="365px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Pomegranate</h5>
+    <p class="card-text">M.R.P:300/kg</p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+    </div>
+
+     <div class="col-sm-4">
+        <div class="card" style="width: 25rem;">
+  <img src="https://stockopedia.pk/wp-content/uploads/2023/08/apple_magsafe_battery_pack_for_iphone_5000mah__master_clone___5000mah__20w_fast_charging1668145578.jpg" height="397px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Orange</h5>
+    <p class="card-text">M.R.P:70/kg</p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
+    </div>
+</div> --}}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
+            {{ successMsg }}
+        </div>
+    </div>
+</div>
+  <div class="container">
+    {{#each products}}
+      <br>
+      <div class="row">
+        {{#each this}}
+          <div class="col-sm-4">
+            <div class="card" style="width: 25rem;">
+              <img src="{{this.imagePath}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.price}}</p>
+                <a href="/add-to-cart/{{this._id}}" class="btn btn-primary">Add to cart</a>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+</body>
+</html>
